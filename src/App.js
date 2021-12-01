@@ -4,6 +4,8 @@ import ConverterPage from './pages/ConverterPage';
 import CriptoRatesPage from './pages/CriptoRatesPage';
 import CurrencysRatesPage from './pages/CurrencysRatesPage';
 
+import './styles/main.css';
+
 function App() {
   return (
     <div>

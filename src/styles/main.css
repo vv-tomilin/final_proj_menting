@@ -1,0 +1,4 @@
+@import './libs/normalize.css';
+@import './global/global.css';
+
+@import './pages-styles/converter-page.css';
