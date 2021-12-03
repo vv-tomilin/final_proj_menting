@@ -2,4 +2,6 @@
 @import './global/global.css';
 
 @import './components-styles/header.css';
+
+@import './pages-styles/common-styles.css';
 @import './pages-styles/converter-page.css';

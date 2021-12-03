@@ -1,7 +1,7 @@
 const CurrencysRatesPage = () => {
   return (
     <>
-      <h1>Currencys Rates Page</h1>
+      <h1 className='visually-hidden'>Курсы валют</h1>
     </>
   );
 };

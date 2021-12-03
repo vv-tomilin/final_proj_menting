@@ -1,7 +1,7 @@
 const CriptoRatesPage = () => {
   return (
     <>
-      <h1>Cripto Rates Page</h1>
+      <h1 className='visually-hidden'>Курсы криптовалют</h1>
     </>
   );
 };

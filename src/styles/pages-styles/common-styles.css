@@ -1,0 +1,29 @@
+.button {
+  position: relative;
+
+  width: 10vw;
+  height: 94px;
+
+  border: none;
+  border-radius: 20px;
+
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+
+  cursor: pointer;
+}
+.button:active {
+  top: 2px;
+  left: 2px;
+
+  box-shadow: -1px 2px 10px 0px rgba(34, 60, 80, 0.3) inset;
+}
+
+.shadow-elem {
+  box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-text {
+  text-shadow: 0px 7px 4px rgba(0, 0, 0, 0.2);
+}
