@@ -1,7 +1,7 @@
 .button {
   position: relative;
 
-  width: 10vw;
+  width: 105px;
   height: 94px;
 
   border: none;
@@ -26,4 +26,17 @@
 
 .shadow-text {
   text-shadow: 0px 7px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/** ============ MOBILE STYLES =============== */
+@media (max-width: 768px) {
+  .button {
+    width: 95px;
+    height: 60px;
+
+    font-size: 30px;
+
+    border-radius: 15px;
+  }
 }

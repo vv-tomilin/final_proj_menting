@@ -2,6 +2,7 @@
 @import './global/global.css';
 
 @import './components-styles/header.css';
+@import './components-styles/converter-settings-field.css';
 
 @import './pages-styles/common-styles.css';
 @import './pages-styles/converter-page.css';

@@ -7,57 +7,6 @@
   align-items: center;
 }
 
-.converter-page__input-wrapper {
-  border-radius: 20px;
-}
-
-.converter-page__input {  
-  width: 35vw;
-  height: 70px;
-
-  border: 12px solid #FFF54A;
-  border-radius: 20px;
-
-  background-color: #FFFBBB;
-  box-shadow: inset 0px 2px 13px 5px rgba(202, 196, 88, 0.5);
-
-  outline: none;
-
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.converter-page__equal-sign {
-  margin-left: 20px;
-  margin-right: 20px;
-
-  font-size: 50px;
-  font-weight: 700;
-
-  color: white;
-}
-
-.converter-page__converted-currensy-btn {
-  margin-left: 40px;
-
-  background-color: #EA44B3;
-}
-.converter-page__converted-currensy-btn:hover {
-  background-color: #cf1290;
-}
-
-.converter-page__convert-to-currensy-btn {
-  background-color: #CFFB49;
-}
-.converter-page__convert-to-currensy-btn:hover {
-  background-color: #acdb1e;
-}
-
-.converter-page__settings-field {
-  display: flex;
-  align-items: center;
-}
 
 .converter-page__result-field {
   margin-top: 50px;
@@ -75,6 +24,7 @@
   font-size: 40px;
   font-weight: 700;
   color: white;
+  text-align: center;
 
   display: flex;
   justify-content: center;
@@ -82,7 +32,9 @@
 }
 
 .converter-page__convert-button {
-  width: 20vw;
+  margin-bottom: 20px;
+
+  width: 250px;
 
   background-color: #FFA44A;
 
@@ -90,4 +42,22 @@
 }
 .converter-page__convert-button:hover {
   background-color: #f3912f;
+}
+
+
+/** ================= MOBILE STYLES ================= */
+@media (max-width: 768px) {
+  .converter-page__result-field {
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    width: 90vw;
+    height: 110px;
+
+    font-size: 25px;
+  }
+
+  .converter-page__convert-button {
+    font-size: 20px;
+  }
 }
