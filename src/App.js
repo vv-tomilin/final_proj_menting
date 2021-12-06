@@ -13,9 +13,9 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route exact path='/' element={<ConverterPage />} />
-        <Route exact path='/currencys' element={<CurrencysRatesPage />} />
-        <Route exact path='/cripto' element={<CriptoRatesPage />} />
+        <Route path='/' element={<ConverterPage />} />
+        <Route path='/currencys' element={<CurrencysRatesPage />} />
+        <Route path='/cripto' element={<CriptoRatesPage />} />
       </Routes>
     </>
   );
