@@ -1,21 +1,12 @@
-import { useState } from 'react';
-
-const ConverterSettingsField = () => {
-
-  const [inputValue, setInputValue] = useState('');
-
-  const changeInputValue = (event) => {
-    let value = (event.target.validity.valid) ? event.target.value : inputValue;
-    setInputValue(value);
-  };
+const ConverterSettingsField = ({ inputValue, changeInputValue }) => {
 
   return (
     <div className='converter-settings-field'>
       <div className='converter-settings-field__input-wrapper shadow-elem'>
         <input
           className='converter-settings-field__input shadow-elem'
-          onInput={changeInputValue}
-          type='tel'
+          onChange={changeInputValue}
+          type='text'
           pattern='[0-9]*'
           maxLength='12'
           value={inputValue} />
