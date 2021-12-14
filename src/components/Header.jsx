@@ -33,13 +33,6 @@ const Header = () => {
         >
           Курсы валют
         </NavLink>
-        <NavLink
-          to="/cripto"
-          onClick={clickBurgerMenu}
-          className={({ isActive }) => isActive ? activeTabStyles : 'header__navigation-tab'}
-        >
-          Курсы криптовалют
-        </NavLink>
       </nav>
     </>
   );
