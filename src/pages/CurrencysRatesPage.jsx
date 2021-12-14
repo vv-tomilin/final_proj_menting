@@ -5,30 +5,30 @@ const CurrencysRatesPage = () => {
       <div className="currencys-page">
         <div className='currencys-page__base-select-wrapper'>
           <span className='currencys-page__base-select-label'>Базовая валюта:</span>
-          <button className='currencys-page__base-select-button'>EUR</button>
+          <button className='currencys-page__base-select-button button shadow-elem shadow-text'>EUR</button>
         </div>
         <ul className='currencys-page__currencys-list'>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>USD</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>RUB</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>GBP</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>JPY</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>AUD</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
-          <li className='currencys-page__list-item'>
+          <li className='currencys-page__list-item shadow-elem shadow-text'>
             <span className='currencys-page__item-tiker'>CNY</span>
             <span className='currencys-page__item-rate'>1.0256</span>
           </li>
