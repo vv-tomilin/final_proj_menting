@@ -72,3 +72,32 @@
 
   color: #F42D2D;
 }
+
+/** ================= MOBILE STYLES ================= */
+@media (max-width: 768px) {
+
+  .currencys-page__base-select-wrapper {
+    flex-direction: column;
+  }
+
+  .currencys-page__base-select-label {
+    font-size: 25px;
+  }
+
+  .currencys-page__base-select-button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .currencys-page__list-item {
+    padding: 10px 35px;
+  }
+
+  .currencys-page__item-tiker {
+    font-size: 30px;
+  }
+
+  .currencys-page__item-rate {
+    font-size: 15px;
+  }
+}
