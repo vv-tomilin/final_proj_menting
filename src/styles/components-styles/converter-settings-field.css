@@ -103,4 +103,8 @@
   .converter-settings-field__converted-currensy-btn {
     margin-left: 0;
   }
+
+  .converter-settings-field__converted-list {
+    margin: 0;
+  }
 }

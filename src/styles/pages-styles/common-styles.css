@@ -47,6 +47,8 @@
   border-radius: 15px;
 
   box-shadow: inset 0px 9px 25px -3px rgb(0 0 0 / 20%);
+
+  z-index: 2;
 }
 
 .currensys-item {
@@ -56,6 +58,10 @@
   margin-bottom: 5px;
 
   border-radius: 10px;
+}
+
+.currensys-item:last-child {
+  margin-bottom: 0;
 }
 
 .currensys-item:hover {
@@ -80,5 +86,15 @@
     font-size: 30px;
 
     border-radius: 15px;
+  }
+
+  .currensys-list {
+    top: 65px;
+
+    font-size: 20px;
+  }
+
+  .currensys-item {
+    margin-bottom: 10px;
   }
 }
