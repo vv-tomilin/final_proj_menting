@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import ConverterSettingsField from "../components/ConverterSettingsField";
 
-const ConverterPage = () => {
+const ConverterPage = ({ currencysList }) => {
 
   const [inputValue, setInputValue] = useState('');
 
@@ -11,11 +11,16 @@ const ConverterPage = () => {
     setInputValue(value);
   };
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <>
       <section className='converter-page'>
         <h1 className='visually-hidden'>Конвертер валют</h1>
         <ConverterSettingsField
+          currencysList={currencysList}
           inputValue={inputValue}
           changeInputValue={changeInputValue} />
         <div className='converter-page__result-field'>Выберите валюты для конвертации...</div>
