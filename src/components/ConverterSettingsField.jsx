@@ -1,15 +1,33 @@
 import { useState } from 'react';
 
-const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList }) => {
+const ConverterSettingsField = (
+  {
+    inputValue,
+    changeInputValue,
+    currencysList,
+    baseCurr,
+    selectBaseCurr,
+    convertCurr,
+    selectConvertCurr
+  }) => {
 
   const [toggleConvertedList, setToggleConvertedList] = useState(false);
   const [toggleConvertList, setToggleConvertList] = useState(false);
 
-  const toggleChangeConverted = () => {
+  const toggleChangeBase = () => {
     setToggleConvertedList(!toggleConvertedList);
   };
 
   const toggleChangeConvert = () => {
+    setToggleConvertList(!toggleConvertList);
+  };
+
+  const selectBase = (curr) => {
+    selectBaseCurr(curr);
+    setToggleConvertedList(!toggleConvertedList);
+  };
+  const selectConvert = (curr) => {
+    selectConvertCurr(curr);
     setToggleConvertList(!toggleConvertList);
   };
 
@@ -30,8 +48,8 @@ const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList })
             className='button 
                       converter-settings-field__converted-currensy-btn 
                       shadow-text shadow-elem'
-            onClick={toggleChangeConverted}>
-            USD
+            onClick={toggleChangeBase}>
+            {baseCurr.toUpperCase()}
           </button>
           {toggleConvertedList &&
             <ul className='converter-settings-field__converted-list currensys-list'>
@@ -39,6 +57,7 @@ const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList })
                 currencysList && currencysList.map((curency, index) => (
                   <li
                     className='converter-settings-field__converted-item currensys-item shadow-elem'
+                    onClick={() => selectBase(curency)}
                     key={index}>{curency}</li>
                 ))
               }
@@ -47,7 +66,7 @@ const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList })
         </div>
         <span
           className='converter-settings-field__equal-sign shadow-text'>
-          =
+          {`>`}
         </span>
         <div className='button-wrapper'>
           <button
@@ -55,7 +74,7 @@ const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList })
                       converter-settings-field__convert-to-currensy-btn 
                       shadow-text shadow-elem'
             onClick={toggleChangeConvert}>
-            RUB
+            {convertCurr.toUpperCase()}
           </button>
           {toggleConvertList &&
             <ul className='converter-settings-field__convert-list currensys-list'>
@@ -63,6 +82,7 @@ const ConverterSettingsField = ({ inputValue, changeInputValue, currencysList })
                 currencysList && currencysList.map((curency, index) => (
                   <li
                     className='converter-settings-field__convert-item currensys-item shadow-elem'
+                    onClick={() => selectConvert(curency)}
                     key={index}>{curency}</li>
                 ))
               }
