@@ -6,15 +6,15 @@ const ConverterSettingsField = (
     changeInputValue,
     currencysList,
     baseCurr,
-    selectBaseCurr,
     convertCurr,
-    selectConvertCurr
+    selectBase,
+    selectConvert
   }) => {
 
   const [toggleConvertedList, setToggleConvertedList] = useState(false);
   const [toggleConvertList, setToggleConvertList] = useState(false);
 
-  const toggleChangeBase = () => {
+  const toggleChangeConverted = () => {
     setToggleConvertedList(!toggleConvertedList);
   };
 
@@ -22,13 +22,14 @@ const ConverterSettingsField = (
     setToggleConvertList(!toggleConvertList);
   };
 
-  const selectBase = (curr) => {
-    selectBaseCurr(curr);
-    setToggleConvertedList(!toggleConvertedList);
+  const selectBaseCurr = (curr) => {
+    selectBase(curr);
+    toggleChangeConverted();
   };
-  const selectConvert = (curr) => {
-    selectConvertCurr(curr);
-    setToggleConvertList(!toggleConvertList);
+
+  const selectConvertCurr = (curr) => {
+    selectConvert(curr);
+    toggleChangeConvert();
   };
 
   return (
@@ -36,6 +37,7 @@ const ConverterSettingsField = (
       <div className='converter-settings-field__input-wrapper shadow-elem'>
         <input
           className='converter-settings-field__input shadow-elem'
+          placeholder='0'
           onChange={changeInputValue}
           type='text'
           pattern='[0-9]*'
@@ -48,7 +50,7 @@ const ConverterSettingsField = (
             className='button 
                       converter-settings-field__converted-currensy-btn 
                       shadow-text shadow-elem'
-            onClick={toggleChangeBase}>
+            onClick={toggleChangeConverted}>
             {baseCurr.toUpperCase()}
           </button>
           {toggleConvertedList &&
@@ -56,8 +58,8 @@ const ConverterSettingsField = (
               {
                 currencysList && currencysList.map((curency, index) => (
                   <li
+                    onClick={() => selectBaseCurr(curency)}
                     className='converter-settings-field__converted-item currensys-item shadow-elem'
-                    onClick={() => selectBase(curency)}
                     key={index}>{curency}</li>
                 ))
               }
@@ -81,8 +83,8 @@ const ConverterSettingsField = (
               {
                 currencysList && currencysList.map((curency, index) => (
                   <li
+                    onClick={() => selectConvertCurr(curency)}
                     className='converter-settings-field__convert-item currensys-item shadow-elem'
-                    onClick={() => selectConvert(curency)}
                     key={index}>{curency}</li>
                 ))
               }

@@ -4,30 +4,33 @@ import ConverterSettingsField from "../components/ConverterSettingsField";
 
 const ConverterPage = ({ currencysList }) => {
 
-  const [inputValue, setInputValue] = useState('0');
+  const resultPlaceholder = 'Выберите валюты для конвертации...';
 
-  const [result, setResult] = useState('Выберите валюты для конвертации...');
+  const [inputValue, setInputValue] = useState('');
 
   const [baseCurr, setBaseCurr] = useState('usd');
   const [convertCurr, setConvertCurr] = useState('rub');
+
   const [rate, setRate] = useState(0);
+
+  const [convertResult, setConvertResult] = useState(resultPlaceholder);
 
   const changeInputValue = (event) => {
     let value = (event.target.validity.valid) ? event.target.value : inputValue;
-    setInputValue(value);
+    setInputValue(String(Number(value)));
   };
 
-  const selectBaseCurr = (curr) => {
+  const selectBase = (curr) => {
     setBaseCurr(curr);
   };
 
-  const selectConvertCurr = (curr) => {
-    setConvertCurr(curr)
+  const selectConvert = (curr) => {
+    setConvertCurr(curr);
   };
 
-  const resultCalc = () => {
+  const convertClick = () => {
     const result = Number(inputValue) * rate;
-    setResult(String(result.toFixed(2)));
+    setConvertResult(String(result.toFixed(2)));
   };
 
   useEffect(() => {
@@ -36,37 +39,34 @@ const ConverterPage = ({ currencysList }) => {
         return response.json();
       })
       .then((json) => {
-        const rate = Object.values(json)[1];
-        setRate(rate);
+        const result = Object.values(json)[1];
+        setRate(result);
       })
-  }, [baseCurr, convertCurr]);
 
-  useEffect(() => {
-    setResult('Выберите валюты для конвертации...');
-  }, [inputValue]);
+    setConvertResult(resultPlaceholder);
+  }, [baseCurr, convertCurr, inputValue]);
 
   return (
     <>
       <section className='converter-page'>
         <h1 className='visually-hidden'>Конвертер валют</h1>
         <ConverterSettingsField
+          baseCurr={baseCurr}
+          convertCurr={convertCurr}
+          selectBase={selectBase}
+          selectConvert={selectConvert}
           currencysList={currencysList}
           inputValue={inputValue}
-          changeInputValue={changeInputValue}
-          baseCurr={baseCurr}
-          selectBaseCurr={selectBaseCurr}
-          convertCurr={convertCurr}
-          selectConvertCurr={selectConvertCurr} />
+          changeInputValue={changeInputValue} />
         <div className='converter-page__result-field'>
-          {result === 'Выберите валюты для конвертации...'
-            ? 'Выберите валюты для конвертации...'
-            : `${inputValue} ${baseCurr.toUpperCase()} = ${result} ${convertCurr.toUpperCase()}`
-          }
+          {convertResult === resultPlaceholder
+            ? resultPlaceholder
+            : `${inputValue} ${baseCurr.toUpperCase()} = ${convertResult} ${convertCurr.toUpperCase()}`}
         </div>
         <button className='button converter-page__convert-button 
                           shadow-elem 
                           shadow-text'
-          onClick={resultCalc}>
+          onClick={convertClick}>
           Конвертировать
         </button>
       </section>
