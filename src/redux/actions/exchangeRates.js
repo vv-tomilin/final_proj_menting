@@ -25,4 +25,7 @@ export const fetchExchangeRates = (baseCurr) => (dispatch) => {
     .then(() => {
       dispatch(setIsLoadedRates(true));
     })
+    .catch((e) => {
+      console.log(e);
+    });
 };

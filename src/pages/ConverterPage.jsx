@@ -42,6 +42,9 @@ const ConverterPage = ({ currencysList }) => {
         const result = Object.values(json)[1];
         setRate(result);
       })
+      .catch((e) => {
+        console.log(e);
+      });
 
     setConvertResult(resultPlaceholder);
   }, [baseCurr, convertCurr, inputValue]);
