@@ -20,7 +20,12 @@ function App() {
             <ConverterPage
               currencysList={currencysList} />
           } />
-        <Route path='/currencys' element={<CurrencysRatesPage />} />
+        <Route
+          path='/currencys'
+          element={
+            <CurrencysRatesPage
+              currencysList={currencysList} />
+          } />
       </Routes>
     </>
   );

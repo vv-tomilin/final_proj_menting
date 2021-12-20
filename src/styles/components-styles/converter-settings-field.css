@@ -58,6 +58,11 @@
 
 
 .converter-settings-field__converted-list {
+  padding: 21px 13px;
+
+  position: absolute;
+  top: 100px;
+
   margin-left: 40px;
   
   background: #f38ad0;
@@ -68,6 +73,11 @@
 }
 
 .converter-settings-field__convert-list {
+  padding: 21px 13px;
+
+  position: absolute;
+  top: 100px;
+
   background: #E1FC8B;
 }
 

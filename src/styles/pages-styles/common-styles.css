@@ -22,6 +22,10 @@
 
 .button-wrapper {
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .shadow-elem {
@@ -33,11 +37,6 @@
 }
 
 .currensys-list {
-  padding: 21px 13px;
-
-  position: absolute;
-  top: 100px;
-  left: 0;
 
   font-size: 25px;
   font-weight: 700;

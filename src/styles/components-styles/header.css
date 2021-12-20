@@ -58,7 +58,7 @@
   .header__navigation {
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 4;
 
     display: flex;
     flex-direction: column;
@@ -111,7 +111,7 @@
     position: relative;
     top: 40px;
     left: 24px;
-    z-index: 5;
+    z-index: 10;
 
     width: 49px;
     height: 7px;
@@ -140,7 +140,7 @@
   /** ============ Open burger menu =============*/
   .header__burger-menu--opened {
     position: fixed;
-    z-index: 3;
+    z-index: 10;
 
     width: 49px;
     height: 49px;
